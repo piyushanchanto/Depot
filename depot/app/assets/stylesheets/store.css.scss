@@ -1,0 +1,25 @@
+// Place all the styles related to the store controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.banner{
+	background-color: #CCC;
+	.page_title{
+		font-size : 8px;
+		font-color : #EEE;
+		font-weight : bold;
+		font-face : Times new roman
+	}
+}
+
+.column{
+	width : 10px;
+}
+
+span{
+	background-color: lime
+}
+
+.showcat td > div {
+	text-align:center;
+}

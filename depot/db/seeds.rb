@@ -5,7 +5,3 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-
-Product.delete_all
-
-Product.create(title: 'Programming Rails 3', description: %{ Rails is the fastest growing and most exciting framework. }, image_url: 'a.jpg', price: 49.95)

@@ -1,0 +1,19 @@
+<h1>Store Catalog</h1>
+<hr /><hr />
+<table>
+<% for product in @products -%>
+	<tr>
+		<td><%= image_tag(product.image_url) %><td>
+		<td>	<h2><%= product.title %></h2>
+			<%= product.description %><br /><br />
+			<h3><span class="price">Price : <%= number_to_currency(product.price) %></span></h3>
+			<%= button_to "Add to Cart" %>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<hr>
+		</td>
+	</tr>
+<% end %>
+</table>

@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+ http_basic_authenticate_with :name => "Ammy", :password => "secret"
+ http_basic_authenticate_with :name => "Ammy", :password => "secret"
   # GET /products
   # GET /products.json
   def index

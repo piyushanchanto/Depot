@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-  <title>Depot</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Depot: <%= controller.action_name %></title>
+  <%= stylesheet_link_tag 'scaffolds.css.scss', 'depot' %>
+  <%#= stylesheet_link_tag    "application", :media => "all" %>
+  <%#= javascript_include_tag "application" %>
+  <%#= csrf_meta_tags %>
 </head>
-<body class='<%= controller.controller_name %>'>
-
+<body>
+<p style="color: green"><%= flash[:notice] %></p>
 <%= yield %>
 
 </body>
