@@ -1,19 +1,17 @@
-<h1>Store Catalog</h1>
-<hr /><hr />
-<table>
-<% for product in @products -%>
-	<tr>
-		<td><%= image_tag(product.image_url) %><td>
-		<td>	<h2><%= product.title %></h2>
-			<%= product.description %><br /><br />
-			<h3><span class="price">Price : <%= number_to_currency(product.price) %></span></h3>
-			<%= button_to "Add to Cart" %>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<hr>
-		</td>
-	</tr>
+<% if notice %>
+	<p id="notice"><%= notice %></p>
 <% end %>
-</table>
+
+<h1>Your Pragmatic Catalog </h1>
+<% @products.each do |product| %>
+	<div class="entry">
+		<%= image_tag(product.image_url) %>	<br />
+		<h3><%= product.title %></h3>
+		<d><%= sanitize(product.description) %></d>
+		<div class="price_line">
+			<span class="price"> price : <%= number_to_currency(product.price) %></span>
+			<%= button_to 'Add to Cart', line_items_path(:product_id => product), :remote => true%>
+		</div>
+	</div>
+
+<% end %>

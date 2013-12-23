@@ -11,3 +11,74 @@
  *= require_self
  *= require_tree .
  */
+
+body, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td{
+	margin: 0;
+	padding: 0;
+}
+
+#banner {
+	background: #9c9;
+	padding: 10px;
+	border-bottom: 2px solid;
+	font: small-caps 40px/40px "Times New Roman", serif;
+	color: #282;
+	text-align: center;
+	
+	img {
+		width: 120px;
+		margin-right: 5px;
+		margin-bottom: 15px;
+		float: left;
+	}
+}
+
+#notice {
+	color: #000 !important;
+	border: 2px solid red;
+	padding: lem;
+	margin-bottom: 2em;
+	background-color: #f0f0f0;
+	font: bold smaller sans-serif;
+}
+#cart, #cart table {
+	font-size: smaller;
+	color: white;
+}
+#cart table {
+	border-top: 1px dotted #595;
+	border-bottom: 1px dotted #595;
+	margin-bottom: 10px;
+}
+#columns {
+	background: white;
+	margin-left:5px;
+	
+	#main {
+		margin-left: 17em;
+		padding: lem;
+		background: white;
+		float: left;
+		width: 60%;
+	}
+	
+	#side {
+		padding: lem 2em;
+		width: 20%;
+		background: #141;
+		float: left;
+		
+		ul {
+			padding: 0;
+			
+			li {
+				list-style: none;
+				
+				a {
+					color: #bfb;
+					font-size: small;
+				}
+			}
+		}
+	}
+}
