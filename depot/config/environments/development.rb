@@ -31,7 +31,21 @@ Depot::Application.configure do
 
   # Do not compress assets
   config.assets.compress = false
-
+  
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
   # Expands the lines which load the assets
   config.assets.debug = true
+  #Depot::Application.configure do
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address              => "smtp.gmail.com",
+    :port                 => 587,
+    :domain               => "www.gmail.com",
+    :authentication       => "plain",
+    :user_name            => "awasthi.piyush8@gmail.com",
+    :password             => "9936038055",
+    :enable_starttls_auto => true }
+  
 end

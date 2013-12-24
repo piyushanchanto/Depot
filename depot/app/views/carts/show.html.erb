@@ -4,7 +4,7 @@
 <% end %>
 <div class="your_cart">
 <div class="cart_title"><u>Your Cart</u> </div><br />
-
+<%= link_to 'More shopping', store_path %>
 <table class="hovertable" align="center">
 	<%# render (@cart.line_item) %>
 	<% for item in @cart.line_items %>
@@ -20,7 +20,12 @@
 	</tr>
 </table>
 <br><br>
-<center><%= button_to 'Empty cart', @cart, :method => :delete, :confirm => 'Are you sure ?' %></center>
+<center>
+<table><tr>
+	<td><%= button_to 'Checkout', new_order_path, :method => :get %></td><td><%= button_to 'Empty cart', @cart, :method => :delete, :confirm => 'Are you sure ?' %></td>
+</tr></table>
+</center>
+
 <br><hr /><hr />
 </div>
 <br><br>

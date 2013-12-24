@@ -1,7 +1,7 @@
 class Cart < ActiveRecord::Base
   #attr_accessible :title, :body
   has_many :line_items, :dependent => :destroy
-  #accepts_nested_attributes_for :line_items
+  accepts_nested_attributes_for :line_items
   
   def add_product(product_id)
     current_item = line_items.where(:product_id => product_id).first

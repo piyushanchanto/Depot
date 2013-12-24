@@ -34,5 +34,12 @@ ActiveRecord::Schema.define(:version => 20131220060103) do
     t.datetime "created_at",                                :null => false
     t.datetime "updated_at",                                :null => false
   end
+  
+  create_table "orders", :force => true do |t|
+    t.string    "name"
+    t.text      "address"
+    t.string    "email"
+    t.string    "pay_time"
+  end
 
 end
