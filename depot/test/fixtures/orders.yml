@@ -1,7 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  name: Dave
+  name: dave
   address: MyText
   email: dave@gmail.com
   pay_type: Cheque

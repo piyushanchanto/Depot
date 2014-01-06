@@ -1,0 +1,2 @@
+module PopulartyLineItemsHelper
+end

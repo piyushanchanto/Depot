@@ -32,6 +32,13 @@ body, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset,
 		float: left;
 	}
 }
+#main {
+	margin-left: 0em;
+	padding: lem;
+	background: white;
+	float: left;
+	width: 100%;
+}
 
 #notice {
 	color: #000 !important;
@@ -41,6 +48,7 @@ body, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset,
 	background-color: #f0f0f0;
 	font: bold smaller sans-serif;
 }
+
 #cart, #cart table {
 	font-size: smaller;
 	color: white;

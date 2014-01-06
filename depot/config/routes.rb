@@ -1,5 +1,41 @@
 Depot::Application.routes.draw do
   
+  devise_for :users
+
+  devise_for :user_logins
+
+  resources :popularty_line_items
+
+
+  resources :popularties
+
+
+  resources :fav_line_items
+
+
+  resources :favs
+
+
+match 'auth/:provider/callback', to: 'sessions#create'
+  match 'auth/failure', to: redirect('/')
+  match 'signout', to: 'sessions#destroy', as: 'signout'
+  
+  
+
+
+
+  get 'admin' => 'admin#index'
+  get "paypal_express/checkout"
+
+  controller :sessions do
+        get 'login' => :new
+        post 'login' => :create
+        delete 'logout' => :destroy
+      end
+    
+  resources :users
+
+
   resources :orders
 
 
@@ -15,6 +51,13 @@ Depot::Application.routes.draw do
     get :who_bought, on: :member
   end
 
+  # get   '/login', :to => 'sessions#new', :as => :login
+  #   match '/auth/:provider/callback', :to => 'sessions#create'
+  #   match '/auth/failure', :to => 'sessions#failure'
+  #   get '/logout', :to => 'sessions#destroy'
+ # match '/auth/:provider/callback', :to => 'users#facebook_login'
+    # match '/auth/:provider/callback', :to => 'users'#facebook_login’
+  resources :contacts
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

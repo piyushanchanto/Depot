@@ -1,0 +1,21 @@
+<h1>Listing favs</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @favs.each do |fav| %>
+  <tr>
+    <td><%= link_to 'Show', fav %></td>
+    <td><%= link_to 'Edit', edit_fav_path(fav) %></td>
+    <td><%= link_to 'Destroy', fav, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Fav', new_fav_path %>

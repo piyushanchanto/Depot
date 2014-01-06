@@ -1,0 +1,2 @@
+module FavLineItemsHelper
+end

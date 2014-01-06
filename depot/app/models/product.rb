@@ -7,9 +7,13 @@ class Product < ActiveRecord::Base
   
   default_scope :order => 'title'
   has_many :line_items
+  has_many :fav_line_items
+  has_many :popularty_line_items
   has_many :orders, through: :line_items
   #accepts_nested_attributes_for :line_items
   before_destroy :ensure_not_referenced_by_any_line_item
+  before_destroy :ensure_not_referenced_by_any_fav_line_item
+  before_destroy :ensure_not_referenced_by_any_popularty_line_item
   
   private
     def ensure_not_referenced_by_any_line_item
@@ -18,6 +22,24 @@ class Product < ActiveRecord::Base
       else
           errors.add(:base, 'Line Items present')
           return false
+      end
+    end
+    
+    def ensure_not_referenced_by_any_fav_line_item
+      if fav_line_items.count.zero?
+        return true
+      else
+        errors.add(:base, 'Fav Line Items Present')
+        return false
+      end
+    end
+    
+    def ensure_not_referenced_by_any_popularty_line_item
+      if popularty_line_items.count.zero?
+        return true
+      else
+        errors.add(:base, 'Popularty Line Items Presents')
+        return false
       end
     end
 end

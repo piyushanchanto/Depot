@@ -1,0 +1,61 @@
+// Place all the styles related to the favs controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// Place all the styles related to the carts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.favs {
+	position: left;
+	.fav_title {
+		font: 150% bold;
+		background-color: #BDBDBD;
+	}
+	
+	.your_fav {
+		boder-style: 3;
+		border-width: 3px;
+		border-color: #009933;
+		
+		position: center;
+    	background-color: #f0f0f0;
+		margin-left: 5px;
+	}
+	
+	.item_price, .total_line {
+	 	text-align: right;
+	}
+	
+	.total_line .total_cell {
+		font-weight: bold;
+		border-top: 1px solid #595;
+	}
+	
+	table.hovertable {
+		font-family: verdana,arial,sans-serif;
+		font-size:11px;
+		color:#333333;
+		border-width: 0px;
+		border-color: #999999;
+		border-collapse: collapse;
+	}
+	table.hovertable th {
+		background-color:#c3dde0;
+		border-width: 0px;
+		padding: 8px;
+		border-style: solid;
+		border-color: #a9c6c9;
+	}
+	table.hovertable tr {
+		background-color:#d4e3e5;
+	}
+	table.hovertable td {
+		border-width: 0px;
+		padding: 8px;
+		border-style: solid;
+		border-color: #a9c6c9;
+	}
+	
+	
+}

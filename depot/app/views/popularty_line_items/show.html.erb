@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Product:</b>
+  <%= @popularty_line_item.product_id %>
+</p>
+
+<p>
+  <b>Popularty:</b>
+  <%= @popularty_line_item.popularty_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_popularty_line_item_path(@popularty_line_item) %> |
+<%= link_to 'Back', popularty_line_items_path %>

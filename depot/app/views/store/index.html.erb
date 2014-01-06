@@ -11,7 +11,72 @@
 		<div class="price_line">
 			<span class="price"> price : <%= number_to_currency(product.price) %></span>
 			<%= button_to 'Add to Cart', line_items_path(:product_id => product), :remote => true%>
+			<%= button_to 'Add to Fav', fav_line_items_path(:product_id => product), :remote => true%>
+			<%= button_to 'Like', popularty_line_items_path(:product_id => product), :remote => true%>
+			<hr>
+
+			<script src="paypal-button.min.js?merchant=P9ZCNY2RCPHAW" alt="PayPal - The safer, easier way to pay online"
+    data-button="buynow" 
+    data-name="Rails" 
+    data-callback="http://localhost:3000" 
+    data-env="sandbox"
+></script>
+
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="4J727WU6QYZGN">
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online.">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
+</form>
+
+
+
+			<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+
+			<!-- Identify your business so that you can collect the payments. -->
+				<input type="hidden" name="business" value=" rt_anupam@gmail.com">
+
+				<!-- Specify a Buy Now button. -->
+				<input type="hidden" name="cmd" value="_xclick">
+
+				<!-- Specify details about the item that buyers will purchase. -->
+				<input type="hidden" name="item_name" value="<%= product.title %>">
+				<input type="hidden" name="amount" value="<%= product.price %>">
+				<input type="hidden" name="currency_code" value="USD">
+
+				<!-- Prompt buyers to enter their desired quantities. -->
+				<input type="hidden" name="undefined_quantity" value="1">
+
+				<!-- Display the payment button. -->
+				<input type="image" name="submit" border="0"
+				src="/images/btn_buynow_LG.gif"
+				alt="PayPal - The safer, easier way to pay online">
+				<img alt="" border="0" width="1" height="1"
+				src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
+
+				</form>
+
+
+
+
+			<hr>
+			<!-- AddThis Button BEGIN -->
+			<div class="addthis_toolbox addthis_default_style ">
+			<a class="addthis_button_preferred_1"></a>
+			<a class="addthis_button_preferred_2"></a>
+			<a class="addthis_button_preferred_3"></a>
+			<a class="addthis_button_preferred_4"></a>
+			<a class="addthis_button_compact"></a>
+			<a class="addthis_counter addthis_bubble_style"></a>
+			</div>
+			<script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+			<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-52c1076c5cd74f66"></script>
+
+			
+			<!-- AddThis Button END -->
+			<%#= link_to image_tag("https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif"), :controller => 'paypal_express', :action => 'checkout' %>
+			
 		</div>
 	</div>
-
+	
 <% end %>

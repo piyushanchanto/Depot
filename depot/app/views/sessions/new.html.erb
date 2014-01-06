@@ -1,0 +1,27 @@
+<div class="depot_form">
+	<% if flash[:alert] %>
+		<p id="notice"><%= flash[:alert] %></p>
+	<% end %>
+	
+	<%= form_tag do %>
+	  <fieldset>
+	  	<legend>Please login</legend><br />
+		<div class="field">
+			<%= label_tag :name, 'Name: ' %><br/>
+			<%= text_field_tag :name, params[:name] %>
+		</div>
+		<div class="field">
+			<%= label_tag :password, 'Password: ' %><br/>
+			<%= password_field_tag :password, params[:password] %>
+		</div>
+		<br/>
+		<div class="field">
+			<%= submit_tag "Login" %>
+		
+		</div>
+		<%#= link_to "Connect With Facebook", store_index_path %>
+		<a href=”/auth/facebook”>Login Via facebook</a>
+		
+	  </fieldset>
+	<% end -%>
+</div>

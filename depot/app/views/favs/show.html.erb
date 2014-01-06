@@ -1,0 +1,23 @@
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+<div class="your_fav">
+<div class="fav_title"><u>Your Wish List items:</u> </div><br />
+<%= link_to 'Add More To Wish List', store_path %>
+<table class="hovertable" align="center">
+	<% @fav.fav_line_items.each do |item| %>
+	<tr>
+		<td><%= item.id %></td>
+		<td><%= item.product.title %></td>
+	</tr>
+		
+	<% end %>
+</table>
+<br><hr>
+<table>
+	<tr>
+		<td><%= button_to 'Empty Fav List', @fav, method: :delete, confirm: 'Are U sure..?' %></td>
+	</tr>
+</table>
+</div>
+</div>
